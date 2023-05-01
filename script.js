@@ -19,8 +19,14 @@ function addFood() {
   caloriesInput.value = "";
 
   console.log(foods);
-}
-
+  let totalCalories = 0;
+  for (let i = 0; i < foods.length; i++) {
+    totalCalories += foods[i].calories;
+  }
+  
+  let calorieCount = document.getElementById("calorie-count");
+  calorieCount.textContent = "Total calories: " + totalCalories;
+  }
 
 let add = document.getElementById("add");
 add.addEventListener("click", addFood);
